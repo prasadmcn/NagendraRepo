@@ -1,0 +1,24 @@
+node {
+
+    stage('triggering Downstream Job'){
+    build job: 'sample_demo_2', parameters: [string(name: '', value: '')];
+    
+    echo 'Down stream job executed sucessfully'
+    }
+
+    stage('Groovy'){
+    def username = 'Jenkins'
+    echo 'Hello Mr. ${username}'
+    echo "I said, Hello Mr. ${username}"
+    
+    echo "Build is :${env.BUILD_ID},Jenkins URL is : ${env.JENKINS_URL} and job name is : ${env.JOB_NAME}"
+    }
+
+    stage('Parameters Demo'){
+    parameters {
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+    }
+    echo "${params.Greeting} World!!!"
+    }
+    
+}
