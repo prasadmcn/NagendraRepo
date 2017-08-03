@@ -38,7 +38,7 @@ node{
     
     //load 'D:\\Groovy\\jobname.groovy'
     }
-    
+  
 }
 node {
     stage('triggering Downstream Job'){
@@ -61,5 +61,8 @@ node {
     }
     stage('Day of Week'){
         bat 'perl  D:\\DevOpsTasks\\DayOfWeek.pl'
-    }
+    } 
+	input 'Shall we stop???'
+	
+	
 }
