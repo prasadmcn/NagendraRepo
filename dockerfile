@@ -1,1 +1,1 @@
-RUN apt-get update -y as
+FROM microsoft/windowsservercore
